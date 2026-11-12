@@ -1,0 +1,43 @@
+{
+  "name": "tarjeto-salud",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@material-symbols-svg/react": "^0.1.23",
+    "framer-motion": "^12.23.25",
+    "next": "^16.0.10",
+    "next-sitemap": "^4.2.3",
+    "nextjs-toploader": "^3.7.15",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hot-toast": "^2.4.1",
+    "react-tooltip": "^5.28.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.5",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@types/node": "^22.13.5",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "daisyui": "^5.0.50",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^16.1.6",
+    "eslint-config-prettier": "^10.1.8",
+    "material-symbols": "^0.44.2",
+    "postcss": "^8.4.49",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.9.3"
+  }
+}

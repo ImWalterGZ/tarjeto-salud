@@ -1,0 +1,1584 @@
+/* ============================================================
+   1. IMPORTS
+   ============================================================ */
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* ==========================================
+   1. CAPA PRIMITIVA (TODA LA PALETA DE FIGMA ACTUALIZADA)
+   ========================================== */
+@layer base {
+  :root {
+    /* Marca: Azul salud */
+    --primitive-brand-berry-50: #eff6ff;
+    --primitive-brand-berry-100: #dbeafe;
+    --primitive-brand-berry-200: #bfdbfe;
+    --primitive-brand-berry-300: #93c5fd;
+    --primitive-brand-berry-400: #60a5fa;
+    --primitive-brand-berry-500: #2563eb;
+    --primitive-brand-berry-600: #1d4ed8;
+    --primitive-brand-berry-700: #1d4ed8;
+    --primitive-brand-berry-800: #1e40af;
+    --primitive-brand-berry-900: #1e3a8a;
+
+    /* Marca: Cocoa */
+    --primitive-brand-cocoa-50: #eeecec;
+    --primitive-brand-cocoa-100: #ddd9d9;
+    --primitive-brand-cocoa-200: #bcb3b2;
+    --primitive-brand-cocoa-300: #9a8e8c;
+    --primitive-brand-cocoa-400: #796865;
+    --primitive-brand-cocoa-500: #57423f;
+    --primitive-brand-cocoa-600: #463532;
+    --primitive-brand-cocoa-700: #342826;
+    --primitive-brand-cocoa-800: #231a19;
+    --primitive-brand-cocoa-900: #110d0d;
+
+    /* Estados de Feedback */
+    --primitive-state-success-50: #e9faed;
+    --primitive-state-success-100: #d3f4dc;
+    --primitive-state-success-200: #a7eab8;
+    --primitive-state-success-300: #7cdf95;
+    --primitive-state-success-400: #50d571;
+    --primitive-state-success-500: #24ca4e;
+    --primitive-state-success-600: #1da23e;
+    --primitive-state-success-700: #16792f;
+    --primitive-state-success-800: #0e511f;
+    --primitive-state-success-900: #072810;
+
+    --primitive-state-warning-50: #fffaea;
+    --primitive-state-warning-100: #fef5d5;
+    --primitive-state-warning-200: #feebab;
+    --primitive-state-warning-300: #fde281;
+    --primitive-state-warning-400: #fdd857;
+    --primitive-state-warning-500: #ffbc39;
+    --primitive-state-warning-600: #caa524;
+    --primitive-state-warning-700: #977c1b;
+    --primitive-state-warning-800: #655212;
+    --primitive-state-warning-900: #322909;
+
+    --primitive-state-danger-50: #ffe7e6;
+    --primitive-state-danger-100: #ffcfcc;
+    --primitive-state-danger-200: #ff9e99;
+    --primitive-state-danger-300: #ff6e66;
+    --primitive-state-danger-400: #ff3d33;
+    --primitive-state-danger-500: #ff0d00;
+    --primitive-state-danger-600: #cc0a00;
+    --primitive-state-danger-700: #990800;
+    --primitive-state-danger-800: #660500;
+    --primitive-state-danger-900: #330300;
+
+    --primitive-state-info-50: #eaecff;
+    --primitive-state-info-100: #d5dafe;
+    --primitive-state-info-200: #abb5fe;
+    --primitive-state-info-300: #818ffd;
+    --primitive-state-info-400: #576afd;
+    --primitive-state-info-500: #2d45fc;
+    --primitive-state-info-600: #2437ca;
+    --primitive-state-info-700: #1b2997;
+    --primitive-state-info-800: #121c65;
+    --primitive-state-info-900: #090e32;
+
+    /* Neutrales */
+    --primitive-neutral-0: #ffffff;
+    --primitive-neutral-50: #fafafa;
+    --primitive-neutral-100: #f5f5f5;
+    --primitive-neutral-200: #eeeeee;
+    --primitive-neutral-300: #e0e0e0;
+    --primitive-neutral-400: #bdbdbd;
+    --primitive-neutral-500: #9e9e9e;
+    --primitive-neutral-600: #757575;
+    --primitive-neutral-700: #616161;
+    --primitive-neutral-800: #4b4b4b;
+    --primitive-neutral-850: #262626;
+    --primitive-neutral-900: #1e1e1e;
+    --primitive-neutral-950: #0d0d0d;
+    --primitive-neutral-1000: #000000;
+
+    /* Acentos (Accents) */
+    --primitive-accents-orange-50: #FEF1E8;
+    --primitive-accents-orange-100: #FEE3D0;
+    --primitive-accents-orange-200: #FDC7A2;
+    --primitive-accents-orange-300: #FBAB73;
+    --primitive-accents-orange-400: #FA8F45;
+    --primitive-accents-orange-500: #F97316;
+    --primitive-accents-orange-600: #C75C12;
+    --primitive-accents-orange-700: #95450D;
+    --primitive-accents-orange-800: #642E09;
+    --primitive-accents-orange-900: #321704;
+    
+    --primitive-accents-purple-50: #F0E9FF;
+    --primitive-accents-purple-100: #E1D3FF;
+    --primitive-accents-purple-200: #C2A7FF;
+    --primitive-accents-purple-300: #A47CFF;
+    --primitive-accents-purple-400: #8550FF;
+    --primitive-accents-purple-500: #6724FF;
+    --primitive-accents-purple-600: #521DCC;
+    --primitive-accents-purple-700: #3E1699;
+    --primitive-accents-purple-800: #290E66;
+    --primitive-accents-purple-900: #150733;
+    
+    --primitive-accents-pink-50: #FFE7F3;
+    --primitive-accents-pink-100: #FFCFE7;
+    --primitive-accents-pink-200: #FFA0CF;
+    --primitive-accents-pink-300: #FF70B7;
+    --primitive-accents-pink-400: #FF419F;
+    --primitive-accents-pink-500: #FF1187;
+    --primitive-accents-pink-600: #CC0E6C;
+    --primitive-accents-pink-700: #990A51;
+    --primitive-accents-pink-800: #660736;
+    --primitive-accents-pink-900: #33031B;
+    
+    --primitive-accents-yellow-50: #FFF8EB;
+    --primitive-accents-yellow-100: #FFF2D7;
+    --primitive-accents-yellow-200: #FFE4B0;
+    --primitive-accents-yellow-300: #FFD788;
+    --primitive-accents-yellow-400: #FFC961;
+    --primitive-accents-yellow-500: #FFBC39;
+    --primitive-accents-yellow-600: #CC962E;
+    --primitive-accents-yellow-700: #997122;
+    --primitive-accents-yellow-800: #664B17;
+    --primitive-accents-yellow-900: #33260B;
+    
+    --primitive-accents-green-50: #F1F8E6;
+    --primitive-accents-green-100: #E4F1CE;
+    --primitive-accents-green-200: #C8E39D;
+    --primitive-accents-green-300: #ADD56B;
+    --primitive-accents-green-400: #91C73A;
+    --primitive-accents-green-500: #76B909;
+    --primitive-accents-green-600: #5E9407;
+    --primitive-accents-green-700: #476F05;
+    --primitive-accents-green-800: #2F4A04;
+    --primitive-accents-green-900: #182502;
+    
+    --primitive-accents-blue-50: #EAEBFF;
+    --primitive-accents-blue-100: #D5D7FF;
+    --primitive-accents-blue-200: #ABAFFF;
+    --primitive-accents-blue-300: #8087FF;
+    --primitive-accents-blue-400: #565FFF;
+    --primitive-accents-blue-500: #2C37FF;
+    --primitive-accents-blue-600: #232CCC;
+    --primitive-accents-blue-700: #1A2199;
+    --primitive-accents-blue-800: #121666;
+    --primitive-accents-blue-900: #090B33;
+    
+    --primitive-accents-mono-50: #EFF0F1;
+    --primitive-accents-mono-100: #DFE0E3;
+    --primitive-accents-mono-200: #BFC1C7;
+    --primitive-accents-mono-300: #9EA3AB;
+    --primitive-accents-mono-400: #7E848F;
+    --primitive-accents-mono-500: #5E6573;
+    --primitive-accents-mono-600: #4B515C;
+    --primitive-accents-mono-700: #383D45;
+    --primitive-accents-mono-800: #26282E;
+    --primitive-accents-mono-900: #131417;
+
+    /* Neutrales (Black / White) */
+    --primitive-alfa-neutral-black-0: #00000000;
+    --primitive-alfa-neutral-black-5: #0000000d;
+    --primitive-alfa-neutral-black-10: #0000001a;
+    --primitive-alfa-neutral-black-20: #00000033;
+    --primitive-alfa-neutral-black-30: #0000004d;
+    --primitive-alfa-neutral-black-40: #00000066;
+    --primitive-alfa-neutral-black-50: #00000080;
+    --primitive-alfa-neutral-black-60: #00000099;
+    --primitive-alfa-neutral-black-70: #000000b2;
+    --primitive-alfa-neutral-black-80: #000000cc;
+    --primitive-alfa-neutral-black-90: #000000e5;
+    --primitive-alfa-neutral-white-0: #ffffff00;
+    --primitive-alfa-neutral-white-5: #ffffff0d;
+    --primitive-alfa-neutral-white-10: #ffffff1a;
+    --primitive-alfa-neutral-white-20: #ffffff33;
+    --primitive-alfa-neutral-white-30: #ffffff4d;
+    --primitive-alfa-neutral-white-40: #ffffff66;
+    --primitive-alfa-neutral-white-50: #ffffff80;
+    --primitive-alfa-neutral-white-60: #ffffff99;
+    --primitive-alfa-neutral-white-70: #ffffffb2;
+    --primitive-alfa-neutral-white-80: #ffffffcc;
+    --primitive-alfa-neutral-white-90: #ffffffe5;
+    /* Marca (Berry / Cocoa) */
+    --primitive-alfa-brand-berry-0: #fe003800;
+    --primitive-alfa-brand-berry-5: #fe00380d;
+    --primitive-alfa-brand-berry-10: #fe00381a;
+    --primitive-alfa-brand-berry-20: #fe003833;
+    --primitive-alfa-brand-berry-30: #fe00384d;
+    --primitive-alfa-brand-berry-40: #fe003866;
+    --primitive-alfa-brand-berry-50: #fe003880;
+    --primitive-alfa-brand-berry-60: #fe003899;
+    --primitive-alfa-brand-berry-70: #fe0038b2;
+    --primitive-alfa-brand-berry-80: #fe0038cc;
+    --primitive-alfa-brand-berry-90: #fe0038e5;
+    --primitive-alfa-brand-cocoa-0: #57423f00;
+    --primitive-alfa-brand-cocoa-5: #57423f0d;
+    --primitive-alfa-brand-cocoa-10: #57423f1a;
+    --primitive-alfa-brand-cocoa-20: #57423f33;
+    --primitive-alfa-brand-cocoa-30: #57423f4d;
+    --primitive-alfa-brand-cocoa-40: #57423f66;
+    --primitive-alfa-brand-cocoa-50: #57423f80;
+    --primitive-alfa-brand-cocoa-60: #57423f99;
+    --primitive-alfa-brand-cocoa-70: #57423fb2;
+    --primitive-alfa-brand-cocoa-80: #57423fcc;
+    --primitive-alfa-brand-cocoa-90: #57423fe5;
+    /* Estados */
+    --primitive-alfa-state-danger-5: #ff0d000d;
+    --primitive-alfa-state-danger-10: #ff0d001a;
+    --primitive-alfa-state-danger-20: #ff0d0033;
+    --primitive-alfa-state-danger-30: #ff0d004d;
+    --primitive-alfa-state-danger-40: #ff0d0066;
+    --primitive-alfa-state-danger-50: #ff0d0080;
+    --primitive-alfa-state-danger-60: #ff0d0099;
+    --primitive-alfa-state-danger-70: #ff0d00b2;
+    --primitive-alfa-state-danger-80: #ff0d00cc;
+    --primitive-alfa-state-danger-90: #ff0d00e5;
+    --primitive-alfa-state-info-5: #2d45fc0d;
+    --primitive-alfa-state-info-10: #2d45fc1a;
+    --primitive-alfa-state-info-20: #2d45fc33;
+    --primitive-alfa-state-info-30: #2d45fc4d;
+    --primitive-alfa-state-info-40: #2d45fc66;
+    --primitive-alfa-state-info-50: #2d45fc80;
+    --primitive-alfa-state-info-60: #2d45fc99;
+    --primitive-alfa-state-info-70: #2d45fcb2;
+    --primitive-alfa-state-info-80: #2d45fccc;
+    --primitive-alfa-state-info-90: #2d45fce5;
+    --primitive-alfa-state-success-0: #24ca4e00;
+    --primitive-alfa-state-success-5: #24ca4e0d;
+    --primitive-alfa-state-success-10: #24ca4e1a;
+    --primitive-alfa-state-success-20: #24ca4e33;
+    --primitive-alfa-state-success-30: #24ca4e4d;
+    --primitive-alfa-state-success-40: #24ca4e66;
+    --primitive-alfa-state-success-50: #24ca4e80;
+    --primitive-alfa-state-success-60: #24ca4e99;
+    --primitive-alfa-state-success-70: #24ca4eb2;
+    --primitive-alfa-state-success-80: #24ca4ecc;
+    --primitive-alfa-state-success-90: #24ca4ee5;
+    --primitive-alfa-state-warning-5: #ffbc390d;
+    --primitive-alfa-state-warning-10: #ffbc391a;
+    --primitive-alfa-state-warning-20: #ffbc3933;
+    --primitive-alfa-state-warning-30: #ffbc394d;
+    --primitive-alfa-state-warning-40: #ffbc3966;
+    --primitive-alfa-state-warning-50: #ffbc3980;
+    --primitive-alfa-state-warning-60: #ffbc3999;
+    --primitive-alfa-state-warning-70: #ffbc39e5;
+    --primitive-alfa-state-warning-80: #ffbc39cc;
+    --primitive-alfa-state-warning-90: #ffbc39e5;
+  }
+  
+}
+
+/* ==========================================
+   2. CAPA SEMÁNTICA (EL TEMA NUEVO DE FIGMA)
+   ========================================== */
+@layer base {
+  :root {
+    /* LIGHT THEME */
+    --brand-primary: var(--primitive-brand-berry-500);
+    --brand-on-primary: var(--primitive-neutral-0);
+
+    /* Surfaces */
+    --surface-canvas: var(--primitive-neutral-0);
+    --surface-base: var(--primitive-neutral-0);
+    --surface-raised: var(--primitive-neutral-50);
+    --surface-subtle: var(--primitive-neutral-100);
+    --surface-brand: var(--primitive-brand-berry-500);
+    --surface-accent: var(--primitive-brand-cocoa-500);
+
+    /* Content (Texto) */
+    --content-text-primary: var(--primitive-neutral-900);
+    --content-text-secondary: var(--primitive-neutral-700);
+    --content-text-muted: var(--primitive-neutral-500);
+    --content-text-inverse: var(--primitive-neutral-0);
+    --content-text-brand: var(--primitive-brand-berry-500);
+    --content-text-ghost-active: var(--primitive-neutral-800);
+    --content-text-ghost-disabled: var(--primitive-neutral-500);
+
+    /* Content (Iconos) */
+    --content-icon-primary: var(--primitive-neutral-900);
+    --content-icon-secondary: var(--primitive-neutral-700);
+    --content-icon-muted: var(--primitive-neutral-500);
+    --content-icon-inverse: var(--primitive-neutral-0);
+    --content-icon-brand: var(--primitive-brand-berry-500);
+    --content-icon-ghost-active: var(--primitive-neutral-800);
+    --content-icon-ghost-disabled: var(--primitive-neutral-500);
+
+    /* Borders */
+    --border-blend: var(--primitive-neutral-0);
+    --border-subtle: var(--primitive-neutral-200);
+    --border-default: var(--primitive-neutral-300);
+    --border-strong: var(--primitive-neutral-400);
+    --border-brand: var(--primitive-brand-berry-500);
+
+    /* Feedback */
+    --feedback-success: var(--primitive-state-success-600);
+    --feedback-warning: var(--primitive-state-warning-500);
+    --feedback-danger: var(--primitive-state-danger-400);
+    --feedback-info: var(--primitive-state-info-400);
+    --feedback-error-fg: var(--primitive-state-danger-500);
+    --feedback-error-border: var(--primitive-state-danger-500);
+
+    /* Bottons */
+    /* ── Primary ── */
+    --btn-primary-bg: var(--brand-primary);
+    --btn-primary-fg: var(--brand-on-primary);
+    --btn-primary-border: var(--brand-primary);
+    --btn-primary-bg-hover: var(--primitive-brand-berry-600);
+    --btn-primary-bg-active: var(--primitive-brand-berry-700);
+    --btn-primary-bg-disabled: var(--primitive-neutral-500);   /* Figma: #9e9e9e */
+    --btn-primary-fg-disabled: var(--primitive-neutral-0);     /* Figma: white */
+
+    /* ── Secondary (cocoa) ── */
+    --btn-secondary-bg: var(--surface-accent);                 /* Figma: cocoa-500 #57423f */
+    --btn-secondary-fg: var(--primitive-neutral-0);            /* Figma: white */
+    --btn-secondary-border: transparent;                       /* Figma: sin borde */
+    --btn-secondary-bg-hover: var(--primitive-brand-cocoa-600);
+    --btn-secondary-bg-active: var(--primitive-brand-cocoa-700);
+    --btn-secondary-bg-disabled: var(--primitive-neutral-700); /* Figma: #616161 */
+    --btn-secondary-fg-disabled: var(--primitive-neutral-0);   /* Figma: white */
+
+    /* ── Outline ── */
+    --btn-outline-bg: transparent;
+    --btn-outline-fg: var(--content-text-secondary);           /* Figma: neutral-700 #616161 */
+    --btn-outline-border: var(--border-default);               /* Figma: neutral-300 #e0e0e0 */
+    --btn-outline-bg-hover: var(--surface-subtle);             /* Figma: rgba(0,0,0,0.05) ≈ neutral-100 */
+    --btn-outline-bg-active: var(--primitive-brand-berry-50);  /* Figma: rgba(254,0,56,0.1) ≈ berry-50 */
+    --btn-outline-bg-disabled: transparent;
+    --btn-outline-fg-disabled: var(--primitive-neutral-500);   /* Figma: neutral-500 #9e9e9e */
+    --btn-outline-border-disabled: var(--border-subtle);
+
+    /* ── Ghost ── */
+    --btn-ghost-bg: var(--surface-base);                       /* Figma: white */
+    --btn-ghost-fg: var(--primitive-neutral-800);              /* Figma: #4b4b4b = neutral-800 */
+    --btn-ghost-border: transparent;
+    --btn-ghost-bg-hover: var(--surface-raised);               /* Figma: #fafafa = neutral-50 */
+    --btn-ghost-bg-active: var(--surface-subtle);              /* Figma: #f5f5f5 = neutral-100 */
+    --btn-ghost-bg-disabled: var(--surface-base);              /* Figma: white */
+    --btn-ghost-fg-disabled: var(--primitive-neutral-500);     /* Figma: neutral-500 #9e9e9e */
+    /* Overlay */
+    --overlay-scrim: var(--primitive-alfa-neutral-black-40);
+    --overlay-hover: var(--primitive-alfa-neutral-black-5);
+    --overlay-pressed: var(--primitive-alfa-neutral-black-20);
+    --overlay-shadow: var(--primitive-alfa-neutral-black-5);
+    --overlay-gradient-white-100: var(--primitive-neutral-0);
+    --overlay-gradient-white-90: var(--primitive-alfa-neutral-white-90);
+    --overlay-gradient-white-80: var(--primitive-alfa-neutral-white-80);
+    --overlay-gradient-white-50: var(--primitive-alfa-neutral-white-50);
+    --overlay-gradient-white-0: var(--primitive-alfa-neutral-white-0);
+    --overlay-gradient-brand-80: var(--primitive-alfa-brand-berry-80);
+    --overlay-gradient-brand-0: var(--primitive-alfa-brand-berry-0);
+    --overlay-gradient-dark-100: var(--primitive-neutral-1000);
+    --overlay-gradient-dark-80: var(--primitive-alfa-neutral-black-80);
+    --overlay-gradient-dark-0: var(--primitive-alfa-neutral-black-0);
+    --overlay-gradient-fidelity-bronze-100: #ca3500;
+    --overlay-gradient-fidelity-bronze-0: #ca350000;
+    --overlay-gradient-fidelity-silver-100: #90a1b9;
+    --overlay-gradient-fidelity-silver-0: #90a1b900;
+    --overlay-gradient-fidelity-gold-100: #f0b100;
+    --overlay-gradient-fidelity-gold-0: #f0b10000;
+    --overlay-gradient-fidelity-ruby-100: #ec003f;
+    --overlay-gradient-fidelity-ruby-0: #ec003f00;
+
+    /* Focus */
+    --focus-brand: var(--primitive-alfa-brand-berry-40);
+    --focus-accent: var(--primitive-alfa-brand-cocoa-40);
+
+    /* Componentes */
+    /* ── SegmentedControl ── */
+    --segmented-container-bg: var(--surface-base);
+    --segmented-container-border: var(--border-default);
+    --segmented-container-content: var(--content-text-primary);
+    --segmented-item-selected-bg: var(--primitive-alfa-brand-berry-10);
+    --segmented-item-selected-content: var(--content-text-brand);
+    --segmented-item-unselected-bg: var(--surface-base);
+    --segmented-item-unselected-content: var(--content-text-secondary);
+    /* ── Slider ── */
+    --slider-empty-bg: var(--primitive-neutral-0);
+    --slider-empty-track: var(--primitive-neutral-200);
+    --slider-empty-thumb: var(--primitive-neutral-0);
+    --slider-empty-border: var(--primitive-neutral-300);
+    --slider-full-bg: var(--primitive-neutral-0);
+    --slider-full-track: var(--primitive-brand-berry-500);
+    --slider-full-thumb: var(--primitive-neutral-0);
+    --slider-full-border: var(--primitive-neutral-300);
+    /* ── Switch ── */
+    --switch-off-default-track: var(--surface-raised);
+    --switch-off-default-thumb: var(--primitive-neutral-300);
+    --switch-off-default-border: var(--border-default);
+    --switch-off-press-track: var(--surface-raised);
+    --switch-off-press-thumb: var(--primitive-neutral-400);
+    --switch-off-press-border: var(--border-default);
+    --switch-on-default-track: var(--surface-brand);
+    --switch-on-default-thumb: var(--primitive-neutral-0);
+    --switch-on-default-border: var(--primitive-brand-berry-600);
+    --switch-on-press-track: var(--surface-brand);
+    --switch-on-press-thumb: var(--primitive-neutral-0);
+    --switch-on-press-border: var(--primitive-brand-berry-600);
+    /* ── Chip ── */
+    --chip-default-bg: var(--primitive-neutral-0);
+    --chip-default-content: var(--primitive-neutral-800);
+    --chip-default-border: var(--primitive-neutral-300);
+    --chip-hover-bg: var(--primitive-neutral-50);
+    --chip-hover-content: var(--primitive-neutral-800);
+    --chip-hover-border: var(--primitive-neutral-400);
+    --chip-active-bg: var(--primitive-brand-berry-50);
+    --chip-active-content: var(--primitive-brand-berry-500);
+    --chip-active-border: var(--primitive-brand-berry-500);
+    /* ── Badge ── */
+    --badge-tinted-info-bg: var(--primitive-state-info-50);
+    --badge-tinted-info-content: var(--primitive-state-info-600);
+    --badge-tinted-info-border: var(--primitive-state-info-200);
+    --badge-tinted-success-bg: var(--primitive-state-success-50);
+    --badge-tinted-success-content: var(--primitive-state-success-600);
+    --badge-tinted-success-border: var(--primitive-state-success-200);
+    --badge-tinted-warning-bg: var(--primitive-state-warning-50);
+    --badge-tinted-warning-content: var(--primitive-state-warning-700);
+    --badge-tinted-warning-border: var(--primitive-state-warning-200);
+    --badge-tinted-danger-border: var(--primitive-state-danger-200);
+    --badge-tinted-danger-bg: var(--primitive-state-danger-50);
+    --badge-tinted-danger-content: var(--primitive-state-danger-500);
+    --badge-tinted-neutral-bg: var(--primitive-neutral-100);
+    --badge-tinted-neutral-content: var(--primitive-neutral-600);
+    --badge-tinted-neutral-border: var(--primitive-neutral-200);
+    --badge-tinted-cocoa-bg: var(--primitive-brand-cocoa-100);
+    --badge-tinted-cocoa-content: var(--primitive-brand-cocoa-600);
+    --badge-tinted-cocoa-border: var(--primitive-brand-cocoa-200);
+    --badge-tinted-primary-bg: var(--primitive-brand-berry-50);
+    --badge-tinted-primary-content: var(--primitive-brand-berry-500);
+    --badge-tinted-primary-border: var(--primitive-brand-berry-200);
+    --badge-solid-info-bg: var(--primitive-state-info-600);
+    --badge-solid-info-content: var(--primitive-neutral-0);
+    --badge-solid-info-border: var(--primitive-state-info-200);
+    --badge-solid-success-bg: var(--primitive-state-success-600);
+    --badge-solid-success-content: var(--primitive-neutral-0);
+    --badge-solid-success-border: var(--primitive-state-success-200);
+    --badge-solid-warning-bg: var(--primitive-state-warning-500);
+    --badge-solid-warning-content: var(--primitive-neutral-0);
+    --badge-solid-warning-border: var(--primitive-state-warning-200);
+    --badge-solid-danger-bg: var(--primitive-state-danger-500);
+    --badge-solid-danger-content: var(--primitive-neutral-0);
+    --badge-solid-danger-border: var(--primitive-state-danger-200);
+    --badge-solid-neutral-bg: var(--primitive-neutral-600);
+    --badge-solid-neutral-content: var(--primitive-neutral-0);
+    --badge-solid-neutral-border: var(--primitive-neutral-200);
+    --badge-solid-cocoa-bg: var(--primitive-brand-cocoa-600);
+    --badge-solid-cocoa-content: var(--primitive-neutral-0);
+    --badge-solid-cocoa-border: var(--primitive-brand-cocoa-200);
+    --badge-solid-primary-bg: var(--primitive-brand-berry-500);
+    --badge-solid-primary-content: var(--primitive-neutral-0);
+    --badge-solid-primary-border: var(--primitive-brand-berry-600);
+    /* ── Input Field ── */
+    --input-bg: var(--surface-base);
+    --input-border: var(--border-default);
+    --input-content: var(--content-text-muted);
+    --input-hover-border: var(--border-strong);
+    --input-active-border: var(--border-brand);
+    --input-disabled-bg: var(--surface-raised);
+    --input-disabled-content: var(--primitive-neutral-300);
+    --input-disabled-border: var(--primitive-neutral-200);
+    --input-searchbar-bg: var(--surface-raised);
+    /* ── Dropdown ── */
+    --dropdown-menu-item-bg: var(--surface-base);
+    --dropdown-menu-item-content: var(--content-text-secondary);
+    --dropdown-menu-item-selected-bg: var(--primitive-alfa-brand-berry-10);
+    --dropdown-menu-item-selected-content: var(--content-text-brand);
+    --dropdown-menu-item-destructive-bg: var(--surface-base);
+    --dropdown-menu-item-destructive-hover: var(--primitive-alfa-state-danger-10);
+    --dropdown-menu-item-destructive-content: var(--primitive-state-danger-500);
+    /* ── IndicatorChip ── */
+    --indicator-chip-bg: var(--primitive-neutral-50);
+    --indicator-chip-border: var(--primitive-neutral-300);
+    --indicator-chip-content: var(--primitive-neutral-800);
+    /* ── TarjetoID ── */
+    --tjid-classic-shared-surface-base: var(--surface-base);
+    --tjid-classic-shared-surface-raised: var(--surface-raised);
+    --tjid-classic-shared-text-primary: var(--content-text-primary);
+    --tjid-classic-shared-text-secondary: var(--content-text-secondary);
+    --tjid-classic-shared-text-muted: var(--content-text-muted);
+    --tjid-classic-shared-border-default: var(--border-default);
+    --tjid-classic-shared-border-strong: var(--border-strong);
+    --tjid-classic-shared-border-subtle: var(--border-subtle);
+    --tjid-classic-red-accent-base: var(--brand-primary);
+    --tjid-classic-red-accent-soft: var(--primitive-brand-berry-400);
+    --tjid-classic-red-accent-text: var(--content-text-brand);
+    --tjid-classic-red-accent-pattern: var(--primitive-brand-berry-500);
+    --tjid-classic-cocoa-accent-base: var(--primitive-brand-cocoa-500);
+    --tjid-classic-cocoa-accent-soft: var(--primitive-brand-cocoa-400);
+    --tjid-classic-cocoa-accent-text: var(--primitive-brand-cocoa-500);
+    --tjid-classic-cocoa-accent-pattern: var(--primitive-brand-cocoa-500);
+    --tjid-classic-purple-accent-base: var(--primitive-accents-purple-500);
+    --tjid-classic-purple-accent-soft: var(--primitive-accents-purple-400);
+    --tjid-classic-purple-accent-text: var(--primitive-accents-purple-500);
+    --tjid-classic-purple-accent-pattern: var(--primitive-accents-purple-500);
+    --tjid-classic-orange-accent-base: var(--primitive-accents-orange-500);
+    --tjid-classic-orange-accent-soft: var(--primitive-accents-orange-400);
+    --tjid-classic-orange-accent-text: var(--primitive-accents-orange-500);
+    --tjid-classic-orange-accent-pattern: var(--primitive-accents-orange-500);
+    --tjid-classic-green-accent-base: var(--primitive-accents-green-500);
+    --tjid-classic-green-accent-soft: var(--primitive-accents-green-400);
+    --tjid-classic-green-accent-text: var(--primitive-accents-green-500);
+    --tjid-classic-green-accent-pattern: var(--primitive-accents-green-500);
+    --tjid-classic-pink-accent-base: var(--primitive-accents-pink-500);
+    --tjid-classic-pink-accent-soft: var(--primitive-accents-pink-400);
+    --tjid-classic-pink-accent-text: var(--primitive-accents-pink-500);
+    --tjid-classic-pink-accent-pattern: var(--primitive-accents-pink-500);
+    --tjid-classic-yellow-accent-base: var(--primitive-accents-yellow-600);
+    --tjid-classic-yellow-accent-soft: var(--primitive-accents-yellow-500);
+    --tjid-classic-yellow-accent-text: var(--primitive-accents-yellow-600);
+    --tjid-classic-yellow-accent-pattern: var(--primitive-accents-yellow-500);
+    --tjid-classic-blue-accent-base: var(--primitive-accents-blue-500);
+    --tjid-classic-blue-accent-soft: var(--primitive-accents-blue-400);
+    --tjid-classic-blue-accent-text: var(--primitive-accents-blue-500);
+    --tjid-classic-blue-accent-pattern: var(--primitive-accents-blue-500);
+    --tjid-classic-gray-accent-base: var(--primitive-accents-mono-500);
+    --tjid-classic-gray-accent-soft: var(--primitive-accents-mono-400);
+    --tjid-classic-gray-accent-text: var(--primitive-accents-mono-500);
+    --tjid-classic-gray-accent-pattern: var(--primitive-accents-mono-500);
+    --tjid-expressive-shared-chip-text: var(--content-text-inverse);
+    --tjid-expressive-shared-overlay-veil: var(--primitive-alfa-neutral-white-80);
+    --tjid-expressive-red-chip-background: var(--primitive-brand-berry-500);
+    --tjid-expressive-red-chip-border: var(--primitive-brand-berry-600);
+    --tjid-expressive-red-border-card: var(--primitive-brand-berry-100);
+    --tjid-expressive-red-border-divider: var(--primitive-brand-berry-100);
+    --tjid-expressive-red-border-picture: var(--primitive-brand-berry-100);
+    --tjid-expressive-red-border-sticker-slot: var(--primitive-brand-berry-200);
+    --tjid-expressive-red-text-strong: var(--primitive-brand-berry-800);
+    --tjid-expressive-red-text-default: var(--primitive-brand-berry-600);
+    --tjid-expressive-red-text-accent: var(--primitive-brand-berry-500);
+    --tjid-expressive-red-text-soft: var(--primitive-brand-berry-400);
+    --tjid-expressive-red-surface-tint: var(--primitive-brand-berry-50);
+    --tjid-expressive-red-surface-footer: var(--primitive-brand-berry-50);
+    --tjid-expressive-red-surface-tray: var(--primitive-brand-berry-50);
+    --tjid-expressive-red-surface-pattern: var(--primitive-brand-berry-500);
+    --tjid-expressive-cocoa-surface-tint: var(--primitive-brand-cocoa-50);
+    --tjid-expressive-cocoa-surface-footer: var(--primitive-brand-cocoa-50);
+    --tjid-expressive-cocoa-surface-tray: var(--primitive-brand-cocoa-50);
+    --tjid-expressive-cocoa-surface-pattern: var(--primitive-brand-cocoa-500);
+    --tjid-expressive-cocoa-border-card: var(--primitive-brand-cocoa-100);
+    --tjid-expressive-cocoa-border-divider: var(--primitive-brand-cocoa-100);
+    --tjid-expressive-cocoa-border-picture: var(--primitive-brand-cocoa-100);
+    --tjid-expressive-cocoa-border-sticker-slot: var(--primitive-brand-cocoa-200);
+    --tjid-expressive-cocoa-text-strong: var(--primitive-brand-cocoa-800);
+    --tjid-expressive-cocoa-text-default: var(--primitive-brand-cocoa-600);
+    --tjid-expressive-cocoa-text-accent: var(--primitive-brand-cocoa-500);
+    --tjid-expressive-cocoa-text-soft: var(--primitive-brand-cocoa-400);
+    --tjid-expressive-cocoa-chip-background: var(--primitive-brand-cocoa-500);
+    --tjid-expressive-cocoa-chip-border: var(--primitive-brand-cocoa-600);
+    --tjid-expressive-purple-surface-tint: var(--primitive-accents-purple-50);
+    --tjid-expressive-purple-surface-footer: var(--primitive-accents-purple-50);
+    --tjid-expressive-purple-surface-tray: var(--primitive-accents-purple-50);
+    --tjid-expressive-purple-surface-pattern: var(--primitive-accents-purple-500);
+    --tjid-expressive-purple-border-card: var(--primitive-accents-purple-100);
+    --tjid-expressive-purple-border-divider: var(--primitive-accents-purple-100);
+    --tjid-expressive-purple-border-picture: var(--primitive-accents-purple-100);
+    --tjid-expressive-purple-border-sticker-slot: var(--primitive-accents-purple-200);
+    --tjid-expressive-purple-text-strong: var(--primitive-accents-purple-800);
+    --tjid-expressive-purple-text-default: var(--primitive-accents-purple-600);
+    --tjid-expressive-purple-text-accent: var(--primitive-accents-purple-500);
+    --tjid-expressive-purple-text-soft: var(--primitive-accents-purple-400);
+    --tjid-expressive-purple-chip-background: var(--primitive-accents-purple-500);
+    --tjid-expressive-purple-chip-border: var(--primitive-accents-purple-600);
+    --tjid-expressive-orange-surface-tint: var(--primitive-accents-orange-50);
+    --tjid-expressive-orange-surface-footer: var(--primitive-accents-orange-50);
+    --tjid-expressive-orange-surface-tray: var(--primitive-accents-orange-50);
+    --tjid-expressive-orange-surface-pattern: var(--primitive-accents-orange-500);
+    --tjid-expressive-orange-border-card: var(--primitive-accents-orange-100);
+    --tjid-expressive-orange-border-divider: var(--primitive-accents-orange-100);
+    --tjid-expressive-orange-border-picture: var(--primitive-accents-orange-100);
+    --tjid-expressive-orange-border-sticker-slot: var(--primitive-accents-orange-200);
+    --tjid-expressive-orange-text-strong: var(--primitive-accents-orange-800);
+    --tjid-expressive-orange-text-default: var(--primitive-accents-orange-600);
+    --tjid-expressive-orange-text-accent: var(--primitive-accents-orange-500);
+    --tjid-expressive-orange-text-soft: var(--primitive-accents-orange-400);
+    --tjid-expressive-orange-chip-background: var(--primitive-accents-orange-500);
+    --tjid-expressive-orange-chip-border: var(--primitive-accents-orange-600);
+    --tjid-expressive-green-surface-tint: var(--primitive-accents-green-50);
+    --tjid-expressive-green-surface-footer: var(--primitive-accents-green-50);
+    --tjid-expressive-green-surface-tray: var(--primitive-accents-green-50);
+    --tjid-expressive-green-surface-pattern: var(--primitive-accents-green-500);
+    --tjid-expressive-green-border-card: var(--primitive-accents-green-100);
+    --tjid-expressive-green-border-divider: var(--primitive-accents-green-100);
+    --tjid-expressive-green-border-picture: var(--primitive-accents-green-100);
+    --tjid-expressive-green-border-sticker-slot: var(--primitive-accents-green-200);
+    --tjid-expressive-green-text-strong: var(--primitive-accents-green-800);
+    --tjid-expressive-green-text-default: var(--primitive-accents-green-600);
+    --tjid-expressive-green-text-accent: var(--primitive-accents-green-500);
+    --tjid-expressive-green-text-soft: var(--primitive-accents-green-400);
+    --tjid-expressive-green-chip-background: var(--primitive-accents-green-500);
+    --tjid-expressive-green-chip-border: var(--primitive-accents-green-600);
+    --tjid-expressive-pink-surface-tint: var(--primitive-accents-pink-50);
+    --tjid-expressive-pink-surface-footer: var(--primitive-accents-pink-50);
+    --tjid-expressive-pink-surface-tray: var(--primitive-accents-pink-50);
+    --tjid-expressive-pink-surface-pattern: var(--primitive-accents-pink-500);
+    --tjid-expressive-pink-border-card: var(--primitive-accents-pink-100);
+    --tjid-expressive-pink-border-divider: var(--primitive-accents-pink-100);
+    --tjid-expressive-pink-border-picture: var(--primitive-accents-pink-100);
+    --tjid-expressive-pink-border-sticker-slot: var(--primitive-accents-pink-200);
+    --tjid-expressive-pink-text-strong: var(--primitive-accents-pink-800);
+    --tjid-expressive-pink-text-default: var(--primitive-accents-pink-600);
+    --tjid-expressive-pink-text-accent: var(--primitive-accents-pink-500);
+    --tjid-expressive-pink-text-soft: var(--primitive-accents-pink-400);
+    --tjid-expressive-pink-chip-background: var(--primitive-accents-pink-500);
+    --tjid-expressive-pink-chip-border: var(--primitive-accents-pink-600);
+    --tjid-expressive-yellow-surface-tint: var(--primitive-accents-yellow-50);
+    --tjid-expressive-yellow-surface-footer: var(--primitive-accents-yellow-50);
+    --tjid-expressive-yellow-surface-tray: var(--primitive-accents-yellow-50);
+    --tjid-expressive-yellow-surface-pattern: var(--primitive-accents-yellow-500);
+    --tjid-expressive-yellow-border-card: var(--primitive-accents-yellow-100);
+    --tjid-expressive-yellow-border-divider: var(--primitive-accents-yellow-100);
+    --tjid-expressive-yellow-border-picture: var(--primitive-accents-yellow-100);
+    --tjid-expressive-yellow-border-sticker-slot: var(--primitive-accents-yellow-200);
+    --tjid-expressive-yellow-text-strong: var(--primitive-accents-yellow-800);
+    --tjid-expressive-yellow-text-default: var(--primitive-accents-yellow-600);
+    --tjid-expressive-yellow-text-accent: var(--primitive-accents-yellow-500);
+    --tjid-expressive-yellow-text-soft: var(--primitive-accents-yellow-400);
+    --tjid-expressive-yellow-chip-background: var(--primitive-accents-yellow-500);
+    --tjid-expressive-yellow-chip-border: var(--primitive-accents-yellow-600);
+    --tjid-expressive-blue-surface-tint: var(--primitive-accents-blue-50);
+    --tjid-expressive-blue-surface-footer: var(--primitive-accents-blue-50);
+    --tjid-expressive-blue-surface-tray: var(--primitive-accents-blue-50);
+    --tjid-expressive-blue-surface-pattern: var(--primitive-accents-blue-500);
+    --tjid-expressive-blue-border-card: var(--primitive-accents-blue-100);
+    --tjid-expressive-blue-border-divider: var(--primitive-accents-blue-100);
+    --tjid-expressive-blue-border-picture: var(--primitive-accents-blue-100);
+    --tjid-expressive-blue-border-sticker-slot: var(--primitive-accents-blue-200);
+    --tjid-expressive-blue-text-strong: var(--primitive-accents-blue-800);
+    --tjid-expressive-blue-text-default: var(--primitive-accents-blue-600);
+    --tjid-expressive-blue-text-accent: var(--primitive-accents-blue-500);
+    --tjid-expressive-blue-text-soft: var(--primitive-accents-blue-400);
+    --tjid-expressive-blue-chip-background: var(--primitive-accents-blue-500);
+    --tjid-expressive-blue-chip-border: var(--primitive-accents-blue-600);
+    --tjid-expressive-gray-surface-tint: var(--primitive-accents-mono-50);
+    --tjid-expressive-gray-surface-footer: var(--primitive-accents-mono-50);
+    --tjid-expressive-gray-surface-tray: var(--primitive-accents-mono-50);
+    --tjid-expressive-gray-surface-pattern: var(--primitive-accents-mono-500);
+    --tjid-expressive-gray-border-card: var(--primitive-accents-mono-100);
+    --tjid-expressive-gray-border-divider: var(--primitive-accents-mono-100);
+    --tjid-expressive-gray-border-picture: var(--primitive-accents-mono-100);
+    --tjid-expressive-gray-border-sticker-slot: var(--primitive-accents-mono-200);
+    --tjid-expressive-gray-text-strong: var(--primitive-accents-mono-800);
+    --tjid-expressive-gray-text-default: var(--primitive-accents-mono-600);
+    --tjid-expressive-gray-text-accent: var(--primitive-accents-mono-500);
+    --tjid-expressive-gray-text-soft: var(--primitive-accents-mono-400);
+    --tjid-expressive-gray-chip-background: var(--primitive-accents-mono-500);
+    --tjid-expressive-gray-chip-border: var(--primitive-accents-mono-500);
+  }
+
+  :root.dark,
+  :root[data-theme="tarjeto-dark"] {
+    /* DARK THEME */
+    --brand-primary: var(--primitive-brand-berry-600);
+    --brand-on-primary: var(--primitive-neutral-0);
+
+    /* Surfaces */
+    --surface-canvas: var(--primitive-neutral-950);
+    --surface-base: var(--primitive-neutral-950);
+    --surface-raised: var(--primitive-neutral-900);
+    --surface-subtle: var(--primitive-neutral-850);
+    --surface-brand: var(--primitive-brand-berry-600);
+    --surface-accent: var(--primitive-brand-cocoa-600);
+
+    /* Content (Texto) */
+    --content-text-primary: var(--primitive-neutral-0);
+    --content-text-secondary: var(--primitive-neutral-400);
+    --content-text-muted: var(--primitive-neutral-700);
+    --content-text-inverse: var(--primitive-neutral-0);
+    --content-text-brand: var(--primitive-brand-berry-600);
+    --content-text-ghost-active: var(--primitive-neutral-800);
+    --content-text-ghost-disabled: var(--primitive-neutral-500);
+
+    /* Content (Iconos) */
+    --content-icon-primary: var(--primitive-neutral-0);
+    --content-icon-secondary: var(--primitive-neutral-200);
+    --content-icon-muted: var(--primitive-neutral-300);
+    --content-icon-inverse: var(--primitive-neutral-0);
+    --content-icon-brand: var(--primitive-brand-berry-600);
+    --content-icon-ghost-active: var(--primitive-neutral-800);
+    --content-icon-ghost-disabled: var(--primitive-neutral-500);
+
+    /* Borders */
+    --border-blend: var(--primitive-neutral-900);
+    --border-subtle: var(--primitive-neutral-850);
+    --border-default: var(--primitive-neutral-800);
+    --border-strong: var(--primitive-neutral-700);
+    --border-brand: var(--primitive-brand-berry-600);
+
+    /* Feedback */
+    --feedback-success: var(--primitive-state-success-300);
+    --feedback-warning: var(--primitive-state-warning-300);
+    --feedback-danger: var(--primitive-state-danger-300);
+    --feedback-info: var(--primitive-state-info-300);
+    --feedback-error-fg: var(--primitive-state-danger-600);
+    --feedback-error-border: var(--primitive-state-danger-600);
+
+    /* Bottons */
+    /* ── Primary dark ── */
+    --btn-primary-bg: var(--primitive-brand-berry-600);
+    --btn-primary-bg-hover: var(--primitive-brand-berry-500);
+    --btn-primary-bg-active: var(--primitive-brand-berry-400);
+    --btn-primary-bg-disabled: var(--primitive-neutral-850);
+    --btn-primary-fg-disabled: var(--primitive-neutral-600);
+
+    /* ── Secondary dark ── */
+    --btn-secondary-bg: var(--surface-accent);
+    --btn-secondary-fg: var(--primitive-neutral-0);
+    --btn-secondary-border: transparent;
+    --btn-secondary-bg-hover: var(--primitive-brand-cocoa-700);
+    --btn-secondary-bg-active: var(--primitive-brand-cocoa-800);
+    --btn-secondary-bg-disabled: var(--primitive-neutral-800);
+    --btn-secondary-fg-disabled: var(--primitive-neutral-600);
+
+    /* ── Outline dark ── */
+    --btn-outline-fg: var(--content-text-secondary);
+    --btn-outline-border: var(--border-default);
+    --btn-outline-bg-hover: var(--surface-subtle);
+    --btn-outline-bg-active: var(--primitive-brand-berry-900);
+    --btn-outline-fg-disabled: var(--primitive-neutral-600);
+    --btn-outline-border-disabled: var(--border-subtle);
+
+    /* ── Ghost dark ── */
+    --btn-ghost-fg: var(--content-text-secondary);
+    --btn-ghost-bg-hover: var(--surface-raised);
+    --btn-ghost-bg-active: var(--surface-subtle);
+    --btn-ghost-fg-disabled: var(--primitive-neutral-600);
+    /* Alfa dark (Marca / Estados siguen el tono) */
+    --primitive-alfa-brand-berry-0: #cb002d00;
+    --primitive-alfa-brand-berry-5: #cb002d0d;
+    --primitive-alfa-brand-berry-10: #cb002d1a;
+    --primitive-alfa-brand-berry-20: #cb002d33;
+    --primitive-alfa-brand-berry-30: #cb002d4d;
+    --primitive-alfa-brand-berry-40: #cb002d66;
+    --primitive-alfa-brand-berry-50: #cb002d80;
+    --primitive-alfa-brand-berry-60: #cb002d99;
+    --primitive-alfa-brand-berry-70: #cb002db2;
+    --primitive-alfa-brand-berry-80: #cb002dcc;
+    --primitive-alfa-brand-berry-90: #cb002de5;
+    --primitive-alfa-brand-cocoa-0: #46353200;
+    --primitive-alfa-brand-cocoa-5: #4635320d;
+    --primitive-alfa-brand-cocoa-10: #4635321a;
+    --primitive-alfa-brand-cocoa-20: #46353233;
+    --primitive-alfa-brand-cocoa-30: #4635324d;
+    --primitive-alfa-brand-cocoa-40: #46353266;
+    --primitive-alfa-brand-cocoa-50: #46353280;
+    --primitive-alfa-brand-cocoa-60: #46353299;
+    --primitive-alfa-brand-cocoa-70: #463532b2;
+    --primitive-alfa-brand-cocoa-80: #463532cc;
+    --primitive-alfa-brand-cocoa-90: #463532e5;
+    --primitive-alfa-state-success-0: #1da23e00;
+    --primitive-alfa-state-success-5: #1da23e0d;
+    --primitive-alfa-state-success-10: #1da23e1a;
+    --primitive-alfa-state-success-20: #1da23e33;
+    --primitive-alfa-state-success-30: #1da23e4d;
+    --primitive-alfa-state-success-40: #1da23e66;
+    --primitive-alfa-state-success-50: #1da23e80;
+    --primitive-alfa-state-success-60: #1da23e99;
+    --primitive-alfa-state-success-70: #1da23eb2;
+    --primitive-alfa-state-success-80: #1da23ecc;
+    --primitive-alfa-state-success-90: #1da23ee5;
+    --primitive-alfa-state-warning-70: #ffbc39b2;
+
+    /* Overlay / Focus */
+    --overlay-scrim: var(--primitive-alfa-neutral-black-60);
+    --overlay-shadow: var(--primitive-alfa-neutral-black-20);
+    --overlay-gradient-white-100: var(--primitive-neutral-950);
+    --overlay-gradient-white-90: var(--primitive-alfa-neutral-black-90);
+    --overlay-gradient-white-80: #0d0d0dcc;
+    --overlay-gradient-white-50: var(--primitive-alfa-neutral-black-50);
+    --overlay-gradient-white-0: var(--primitive-alfa-neutral-black-0);
+
+    /* Componentes */
+    /* ── Slider ── */
+    --slider-empty-bg: var(--primitive-neutral-950);
+    --slider-empty-track: var(--primitive-neutral-850);
+    --slider-empty-thumb: var(--primitive-neutral-850);
+    --slider-empty-border: var(--primitive-neutral-800);
+    --slider-full-bg: var(--primitive-neutral-950);
+    --slider-full-track: var(--primitive-brand-berry-600);
+    --slider-full-thumb: var(--primitive-neutral-850);
+    --slider-full-border: var(--primitive-neutral-800);
+    /* ── Switch ── */
+    --switch-off-default-thumb: var(--primitive-neutral-800);
+    --switch-off-press-thumb: var(--primitive-neutral-700);
+    --switch-on-default-border: var(--primitive-brand-berry-700);
+    --switch-on-press-border: var(--primitive-brand-berry-700);
+    /* ── Chip ── */
+    --chip-default-bg: var(--primitive-neutral-950);
+    --chip-default-content: var(--primitive-neutral-0);
+    --chip-default-border: var(--primitive-neutral-600);
+    --chip-hover-bg: var(--primitive-neutral-900);
+    --chip-hover-content: var(--primitive-neutral-0);
+    --chip-hover-border: var(--primitive-neutral-500);
+    --chip-active-bg: var(--primitive-brand-berry-900);
+    --chip-active-border: var(--primitive-brand-berry-600);
+    /* ── Badge ── */
+    --badge-tinted-info-bg: var(--primitive-state-info-900);
+    --badge-tinted-info-content: var(--primitive-state-info-200);
+    --badge-tinted-info-border: var(--primitive-state-info-700);
+    --badge-tinted-success-bg: var(--primitive-state-success-900);
+    --badge-tinted-success-border: var(--primitive-state-success-700);
+    --badge-tinted-warning-bg: var(--primitive-state-warning-900);
+    --badge-tinted-warning-content: var(--primitive-state-warning-500);
+    --badge-tinted-warning-border: var(--primitive-state-warning-700);
+    --badge-tinted-danger-border: var(--primitive-state-danger-700);
+    --badge-tinted-danger-bg: var(--primitive-state-danger-900);
+    --badge-tinted-neutral-bg: var(--primitive-neutral-850);
+    --badge-tinted-neutral-content: var(--primitive-neutral-400);
+    --badge-tinted-neutral-border: var(--primitive-neutral-700);
+    --badge-tinted-cocoa-bg: var(--primitive-brand-cocoa-800);
+    --badge-tinted-cocoa-content: var(--primitive-brand-cocoa-400);
+    --badge-tinted-cocoa-border: var(--primitive-brand-cocoa-600);
+    --badge-tinted-primary-bg: var(--primitive-brand-berry-800);
+    --badge-tinted-primary-content: var(--primitive-brand-berry-600);
+    --badge-tinted-primary-border: var(--primitive-brand-berry-600);
+    --badge-solid-info-border: var(--primitive-state-info-700);
+    --badge-solid-success-border: var(--primitive-state-success-700);
+    --badge-solid-warning-bg: var(--primitive-state-warning-700);
+    --badge-solid-warning-border: var(--primitive-state-warning-700);
+    --badge-solid-danger-bg: var(--primitive-state-danger-700);
+    --badge-solid-danger-border: var(--primitive-state-danger-700);
+    --badge-solid-neutral-bg: var(--primitive-neutral-850);
+    --badge-solid-neutral-border: var(--primitive-neutral-700);
+    --badge-solid-cocoa-bg: var(--primitive-brand-cocoa-800);
+    --badge-solid-cocoa-border: var(--primitive-brand-cocoa-700);
+    --badge-solid-primary-bg: var(--primitive-brand-berry-600);
+    --badge-solid-primary-border: var(--primitive-brand-berry-700);
+    /* ── Input Field ── */
+    --input-disabled-content: var(--primitive-neutral-800);
+    --input-disabled-border: var(--primitive-neutral-850);
+    /* ── Dropdown ── */
+    --dropdown-menu-item-destructive-content: var(--primitive-state-danger-600);
+    /* ── IndicatorChip ── */
+    --indicator-chip-bg: var(--primitive-neutral-900);
+    --indicator-chip-border: var(--primitive-neutral-600);
+    --indicator-chip-content: var(--primitive-neutral-0);
+    /* ── TarjetoID ── */
+    --tjid-classic-red-accent-soft: var(--primitive-brand-berry-700);
+    --tjid-classic-red-accent-pattern: var(--primitive-brand-berry-200);
+    --tjid-classic-cocoa-accent-base: var(--primitive-brand-cocoa-300);
+    --tjid-classic-cocoa-accent-soft: var(--primitive-brand-cocoa-600);
+    --tjid-classic-cocoa-accent-text: var(--primitive-brand-cocoa-300);
+    --tjid-classic-cocoa-accent-pattern: var(--primitive-brand-cocoa-200);
+    --tjid-classic-purple-accent-base: var(--primitive-accents-purple-600);
+    --tjid-classic-purple-accent-soft: var(--primitive-accents-purple-700);
+    --tjid-classic-purple-accent-text: var(--primitive-accents-purple-600);
+    --tjid-classic-purple-accent-pattern: var(--primitive-accents-purple-200);
+    --tjid-classic-orange-accent-base: var(--primitive-accents-orange-600);
+    --tjid-classic-orange-accent-soft: var(--primitive-accents-orange-700);
+    --tjid-classic-orange-accent-text: var(--primitive-accents-orange-600);
+    --tjid-classic-orange-accent-pattern: var(--primitive-accents-orange-200);
+    --tjid-classic-green-accent-base: var(--primitive-accents-green-600);
+    --tjid-classic-green-accent-soft: var(--primitive-accents-green-700);
+    --tjid-classic-green-accent-text: var(--primitive-accents-green-600);
+    --tjid-classic-green-accent-pattern: var(--primitive-accents-green-200);
+    --tjid-classic-pink-accent-base: var(--primitive-accents-pink-600);
+    --tjid-classic-pink-accent-soft: var(--primitive-accents-pink-700);
+    --tjid-classic-pink-accent-text: var(--primitive-accents-pink-600);
+    --tjid-classic-pink-accent-pattern: var(--primitive-accents-pink-200);
+    --tjid-classic-yellow-accent-base: var(--primitive-accents-yellow-500);
+    --tjid-classic-yellow-accent-soft: var(--primitive-accents-yellow-600);
+    --tjid-classic-yellow-accent-text: var(--primitive-accents-yellow-500);
+    --tjid-classic-yellow-accent-pattern: var(--primitive-accents-yellow-200);
+    --tjid-classic-blue-accent-base: var(--primitive-accents-blue-300);
+    --tjid-classic-blue-accent-text: var(--primitive-accents-blue-300);
+    --tjid-classic-blue-accent-pattern: var(--primitive-accents-blue-200);
+    --tjid-classic-gray-accent-base: var(--primitive-accents-mono-300);
+    --tjid-classic-gray-accent-soft: var(--primitive-accents-mono-500);
+    --tjid-classic-gray-accent-text: var(--primitive-accents-mono-300);
+    --tjid-classic-gray-accent-pattern: var(--primitive-accents-mono-200);
+    --tjid-expressive-shared-overlay-veil: var(--primitive-alfa-neutral-black-80);
+    --tjid-expressive-red-chip-background: var(--primitive-brand-berry-700);
+    --tjid-expressive-red-border-card: var(--primitive-brand-berry-800);
+    --tjid-expressive-red-border-divider: var(--primitive-brand-berry-800);
+    --tjid-expressive-red-border-picture: var(--primitive-brand-berry-800);
+    --tjid-expressive-red-border-sticker-slot: var(--primitive-brand-berry-700);
+    --tjid-expressive-red-text-strong: var(--primitive-brand-berry-200);
+    --tjid-expressive-red-text-default: var(--primitive-brand-berry-400);
+    --tjid-expressive-red-text-accent: var(--primitive-brand-berry-600);
+    --tjid-expressive-red-text-soft: var(--primitive-brand-berry-700);
+    --tjid-expressive-red-surface-tint: var(--primitive-brand-berry-900);
+    --tjid-expressive-red-surface-footer: var(--primitive-brand-berry-900);
+    --tjid-expressive-red-surface-tray: var(--primitive-brand-berry-900);
+    --tjid-expressive-red-surface-pattern: var(--primitive-brand-berry-200);
+    --tjid-expressive-cocoa-surface-tint: var(--primitive-brand-cocoa-900);
+    --tjid-expressive-cocoa-surface-footer: var(--primitive-brand-cocoa-900);
+    --tjid-expressive-cocoa-surface-tray: var(--primitive-brand-cocoa-900);
+    --tjid-expressive-cocoa-surface-pattern: var(--primitive-brand-cocoa-200);
+    --tjid-expressive-cocoa-border-card: var(--primitive-brand-cocoa-800);
+    --tjid-expressive-cocoa-border-divider: var(--primitive-brand-cocoa-800);
+    --tjid-expressive-cocoa-border-picture: var(--primitive-brand-cocoa-800);
+    --tjid-expressive-cocoa-border-sticker-slot: var(--primitive-brand-cocoa-700);
+    --tjid-expressive-cocoa-text-strong: var(--primitive-brand-cocoa-200);
+    --tjid-expressive-cocoa-text-default: var(--primitive-brand-cocoa-300);
+    --tjid-expressive-cocoa-text-accent: var(--primitive-brand-cocoa-300);
+    --tjid-expressive-cocoa-chip-background: var(--primitive-brand-cocoa-700);
+    --tjid-expressive-purple-surface-tint: var(--primitive-accents-purple-900);
+    --tjid-expressive-purple-surface-footer: var(--primitive-accents-purple-900);
+    --tjid-expressive-purple-surface-tray: var(--primitive-accents-purple-900);
+    --tjid-expressive-purple-surface-pattern: var(--primitive-accents-purple-200);
+    --tjid-expressive-purple-border-card: var(--primitive-accents-purple-800);
+    --tjid-expressive-purple-border-divider: var(--primitive-accents-purple-800);
+    --tjid-expressive-purple-border-picture: var(--primitive-accents-purple-800);
+    --tjid-expressive-purple-border-sticker-slot: var(--primitive-accents-purple-700);
+    --tjid-expressive-purple-text-strong: var(--primitive-accents-purple-200);
+    --tjid-expressive-purple-text-default: var(--primitive-accents-purple-400);
+    --tjid-expressive-purple-text-accent: var(--primitive-accents-purple-600);
+    --tjid-expressive-purple-text-soft: var(--primitive-accents-purple-700);
+    --tjid-expressive-purple-chip-background: var(--primitive-accents-purple-700);
+    --tjid-expressive-orange-surface-tint: var(--primitive-accents-orange-900);
+    --tjid-expressive-orange-surface-footer: var(--primitive-accents-orange-900);
+    --tjid-expressive-orange-surface-tray: var(--primitive-accents-orange-900);
+    --tjid-expressive-orange-surface-pattern: var(--primitive-accents-orange-200);
+    --tjid-expressive-orange-border-card: var(--primitive-accents-orange-800);
+    --tjid-expressive-orange-border-divider: var(--primitive-accents-orange-800);
+    --tjid-expressive-orange-border-picture: var(--primitive-accents-orange-800);
+    --tjid-expressive-orange-border-sticker-slot: var(--primitive-accents-orange-700);
+    --tjid-expressive-orange-text-strong: var(--primitive-accents-orange-200);
+    --tjid-expressive-orange-text-default: var(--primitive-accents-orange-400);
+    --tjid-expressive-orange-text-accent: var(--primitive-accents-orange-600);
+    --tjid-expressive-orange-text-soft: var(--primitive-accents-orange-700);
+    --tjid-expressive-orange-chip-background: var(--primitive-accents-orange-700);
+    --tjid-expressive-green-surface-tint: var(--primitive-accents-green-900);
+    --tjid-expressive-green-surface-footer: var(--primitive-accents-green-900);
+    --tjid-expressive-green-surface-tray: var(--primitive-accents-green-900);
+    --tjid-expressive-green-surface-pattern: var(--primitive-accents-green-200);
+    --tjid-expressive-green-border-card: var(--primitive-accents-green-800);
+    --tjid-expressive-green-border-divider: var(--primitive-accents-green-800);
+    --tjid-expressive-green-border-picture: var(--primitive-accents-green-800);
+    --tjid-expressive-green-border-sticker-slot: var(--primitive-accents-green-700);
+    --tjid-expressive-green-text-strong: var(--primitive-accents-green-200);
+    --tjid-expressive-green-text-default: var(--primitive-accents-green-400);
+    --tjid-expressive-green-text-accent: var(--primitive-accents-green-600);
+    --tjid-expressive-green-text-soft: var(--primitive-accents-green-700);
+    --tjid-expressive-green-chip-background: var(--primitive-accents-green-700);
+    --tjid-expressive-pink-surface-tint: var(--primitive-accents-pink-900);
+    --tjid-expressive-pink-surface-footer: var(--primitive-accents-pink-900);
+    --tjid-expressive-pink-surface-tray: var(--primitive-accents-pink-900);
+    --tjid-expressive-pink-surface-pattern: var(--primitive-accents-pink-200);
+    --tjid-expressive-pink-border-card: var(--primitive-accents-pink-800);
+    --tjid-expressive-pink-border-divider: var(--primitive-accents-pink-800);
+    --tjid-expressive-pink-border-picture: var(--primitive-accents-pink-800);
+    --tjid-expressive-pink-border-sticker-slot: var(--primitive-accents-pink-700);
+    --tjid-expressive-pink-text-strong: var(--primitive-accents-pink-200);
+    --tjid-expressive-pink-text-default: var(--primitive-accents-pink-400);
+    --tjid-expressive-pink-text-accent: var(--primitive-accents-pink-600);
+    --tjid-expressive-pink-text-soft: var(--primitive-accents-pink-700);
+    --tjid-expressive-pink-chip-background: var(--primitive-accents-pink-700);
+    --tjid-expressive-yellow-surface-tint: var(--primitive-accents-yellow-900);
+    --tjid-expressive-yellow-surface-footer: var(--primitive-accents-yellow-900);
+    --tjid-expressive-yellow-surface-tray: var(--primitive-accents-yellow-900);
+    --tjid-expressive-yellow-surface-pattern: var(--primitive-accents-yellow-200);
+    --tjid-expressive-yellow-border-card: var(--primitive-accents-yellow-800);
+    --tjid-expressive-yellow-border-divider: var(--primitive-accents-yellow-800);
+    --tjid-expressive-yellow-border-picture: var(--primitive-accents-yellow-800);
+    --tjid-expressive-yellow-border-sticker-slot: var(--primitive-accents-yellow-700);
+    --tjid-expressive-yellow-text-strong: var(--primitive-accents-yellow-200);
+    --tjid-expressive-yellow-text-default: var(--primitive-accents-yellow-400);
+    --tjid-expressive-yellow-text-accent: var(--primitive-accents-yellow-600);
+    --tjid-expressive-yellow-text-soft: var(--primitive-accents-yellow-700);
+    --tjid-expressive-yellow-chip-background: var(--primitive-accents-yellow-700);
+    --tjid-expressive-blue-surface-tint: var(--primitive-accents-blue-900);
+    --tjid-expressive-blue-surface-footer: var(--primitive-accents-blue-900);
+    --tjid-expressive-blue-surface-tray: var(--primitive-accents-blue-900);
+    --tjid-expressive-blue-surface-pattern: var(--primitive-accents-blue-200);
+    --tjid-expressive-blue-border-card: var(--primitive-accents-blue-800);
+    --tjid-expressive-blue-border-divider: var(--primitive-accents-blue-800);
+    --tjid-expressive-blue-border-picture: var(--primitive-accents-blue-800);
+    --tjid-expressive-blue-border-sticker-slot: var(--primitive-accents-blue-700);
+    --tjid-expressive-blue-text-strong: var(--primitive-accents-blue-100);
+    --tjid-expressive-blue-text-default: var(--primitive-accents-blue-300);
+    --tjid-expressive-blue-text-accent: var(--primitive-accents-blue-400);
+    --tjid-expressive-blue-text-soft: var(--primitive-accents-blue-500);
+    --tjid-expressive-blue-chip-background: var(--primitive-accents-blue-700);
+    --tjid-expressive-gray-surface-tint: var(--primitive-accents-mono-900);
+    --tjid-expressive-gray-surface-footer: var(--primitive-accents-mono-900);
+    --tjid-expressive-gray-surface-tray: var(--primitive-accents-mono-900);
+    --tjid-expressive-gray-surface-pattern: var(--primitive-accents-mono-200);
+    --tjid-expressive-gray-border-card: var(--primitive-accents-mono-800);
+    --tjid-expressive-gray-border-divider: var(--primitive-accents-mono-800);
+    --tjid-expressive-gray-border-picture: var(--primitive-accents-mono-800);
+    --tjid-expressive-gray-border-sticker-slot: var(--primitive-accents-mono-700);
+    --tjid-expressive-gray-text-strong: var(--primitive-accents-mono-100);
+    --tjid-expressive-gray-text-default: var(--primitive-accents-mono-300);
+    --tjid-expressive-gray-text-accent: var(--primitive-accents-mono-400);
+    --tjid-expressive-gray-text-soft: var(--primitive-accents-mono-500);
+    --tjid-expressive-gray-chip-background: var(--primitive-accents-mono-700);
+    --tjid-expressive-gray-chip-border: var(--primitive-accents-mono-600);
+  }
+}
+
+/* ==========================================
+   3. CONECTAR TOKENS A TAILWIND V4
+   ========================================== */
+@theme {
+  --font-display: var(--font-playfair-display), serif;
+  --font-sans: "Mona Sans", var(--font-inter), sans-serif;
+  --font-mona: "Mona Sans", "sans-serif";
+  --font-domine: "Domine", "serif";
+
+  /* Variables Semánticas Expuestas */
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-on-primary: var(--brand-on-primary);
+
+  /* surface */
+  --color-surface-canvas: var(--surface-canvas);
+  --color-surface-base: var(--surface-base);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-brand: var(--surface-brand);
+  --color-surface-accent: var(--surface-accent);
+
+  --color-content-text-primary: var(--content-text-primary);
+  --color-content-text-secondary: var(--content-text-secondary);
+  --color-content-text-muted: var(--content-text-muted);
+  --color-content-text-inverse: var(--content-text-inverse);
+  --color-content-text-brand: var(--content-text-brand);
+
+  --color-content-icon-primary: var(--content-icon-primary);
+  --color-content-icon-secondary: var(--content-icon-secondary);
+  --color-content-icon-muted: var(--content-icon-muted);
+  --color-content-icon-inverse: var(--content-icon-inverse);
+  --color-content-icon-brand: var(--content-icon-brand);
+
+  --color-border-blend: var(--border-blend);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-default: var(--border-default);
+  --color-border-strong: var(--border-strong);
+  --color-border-brand: var(--border-brand);
+
+  --color-feedback-success: var(--feedback-success);
+  --color-feedback-warning: var(--feedback-warning);
+  --color-feedback-danger: var(--feedback-danger);
+  --color-feedback-info: var(--feedback-info);
+
+  /* ==========================================
+     ⭕ LAYOUT: BORDES (Radius)
+     ========================================== */
+  --radius-0: 0px;
+  --radius-4: 0.25rem;     /* 4px */
+  --radius-8: 0.5rem;      /* 8px */
+  --radius-12: 0.75rem;    /* 12px */
+  --radius-16: 1rem;       /* 16px */
+  --radius-24: 1.5rem;     /* 24px */
+  --radius-32: 2rem;       /* 32px */
+  --radius-48: 3rem;       /* 48px */
+  --radius-999: 9999px;
+
+ /* ==========================================
+     ➖ LAYOUT: GROSORES DE LÍNEA (Stroke)
+     ========================================== */
+  --border-width-none: 0px;
+  --border-width-DEFAULT: 1px;
+  --border-width-bold: 2px;
+
+  /* ==========================================
+     🔠 TIPOGRAFÍA: TAMAÑOS (Size)
+     ========================================== */
+  --text-xxxs: 0.375rem;
+  --text-xxs: 0.5rem;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-h3: 1.5rem;
+  --text-h2: 2rem;
+  --text-h1: 2.5rem;
+  --text-display-sm: 3.5rem;
+  --text-display-md: 4.5rem;
+  --text-display-lg: 6rem;
+
+  /* 📏 TIPOGRAFÍA: LINE-HEIGHTS */
+  --text-xs--line-height: 1.4;
+  --text-sm--line-height: 1.4;
+  --text-md--line-height: 1.4;
+  --text-lg--line-height: 1.2;
+  --text-xl--line-height: 1.2;
+  --text-h3--line-height: 1.2;
+  --text-h2--line-height: 1.2;
+  --text-h1--line-height: 1.2;
+  --text-display-sm--line-height: 1;
+  --text-display-md--line-height: 1;
+  --text-display-lg--line-height: 1;
+
+  /* ⚖️ TIPOGRAFÍA: PESOS */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  /* ==========================================
+     👻 OPACIDADES
+     ========================================== */
+  --opacity-disabled: 0.38;
+  --opacity-hint: 0.5;
+
+  /* ==========================================
+     🔘 BOTONES
+     ========================================== */
+
+  /* Primary */
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-fg: var(--btn-primary-fg);
+  --color-btn-primary-border: var(--btn-primary-border);
+  --color-btn-primary-bg-hover: var(--btn-primary-bg-hover);
+  --color-btn-primary-bg-active: var(--btn-primary-bg-active);
+  --color-btn-primary-bg-disabled: var(--btn-primary-bg-disabled);
+  --color-btn-primary-fg-disabled: var(--btn-primary-fg-disabled);
+
+  /* Secondary */
+  --color-btn-secondary-bg: var(--btn-secondary-bg);
+  --color-btn-secondary-fg: var(--btn-secondary-fg);
+  --color-btn-secondary-border: var(--btn-secondary-border);
+  --color-btn-secondary-bg-hover: var(--btn-secondary-bg-hover);
+  --color-btn-secondary-bg-active: var(--btn-secondary-bg-active);
+  --color-btn-secondary-bg-disabled: var(--btn-secondary-bg-disabled);
+  --color-btn-secondary-fg-disabled: var(--btn-secondary-fg-disabled);
+
+  /* Outline */
+  --color-btn-outline-bg: var(--btn-outline-bg);
+  --color-btn-outline-fg: var(--btn-outline-fg);
+  --color-btn-outline-border: var(--btn-outline-border);
+  --color-btn-outline-bg-hover: var(--btn-outline-bg-hover);
+  --color-btn-outline-bg-active: var(--btn-outline-bg-active);
+  --color-btn-outline-bg-disabled: var(--btn-outline-bg-disabled);
+  --color-btn-outline-fg-disabled: var(--btn-outline-fg-disabled);
+  --color-btn-outline-border-disabled: var(--btn-outline-border-disabled);
+
+  /* Ghost */
+  --color-btn-ghost-bg: var(--btn-ghost-bg);
+  --color-btn-ghost-fg: var(--btn-ghost-fg);
+  --color-btn-ghost-border: var(--btn-ghost-border);
+  --color-btn-ghost-bg-hover: var(--btn-ghost-bg-hover);
+  --color-btn-ghost-bg-active: var(--btn-ghost-bg-active);
+  --color-btn-ghost-bg-disabled: var(--btn-ghost-bg-disabled);
+  --color-btn-ghost-fg-disabled: var(--btn-ghost-fg-disabled);
+  /* ==========================================
+     🪟 OVERLAY / FOCUS
+     ========================================== */
+  --color-overlay-scrim: var(--overlay-scrim);
+  --color-overlay-hover: var(--overlay-hover);
+  --color-overlay-pressed: var(--overlay-pressed);
+  --color-overlay-shadow: var(--overlay-shadow);
+  --color-overlay-gradient-white-100: var(--overlay-gradient-white-100);
+  --color-overlay-gradient-white-90: var(--overlay-gradient-white-90);
+  --color-overlay-gradient-white-80: var(--overlay-gradient-white-80);
+  --color-overlay-gradient-white-50: var(--overlay-gradient-white-50);
+  --color-overlay-gradient-white-0: var(--overlay-gradient-white-0);
+  --color-overlay-gradient-brand-80: var(--overlay-gradient-brand-80);
+  --color-overlay-gradient-brand-0: var(--overlay-gradient-brand-0);
+  --color-overlay-gradient-dark-100: var(--overlay-gradient-dark-100);
+  --color-overlay-gradient-dark-80: var(--overlay-gradient-dark-80);
+  --color-overlay-gradient-dark-0: var(--overlay-gradient-dark-0);
+  --color-overlay-gradient-fidelity-bronze-100: var(--overlay-gradient-fidelity-bronze-100);
+  --color-overlay-gradient-fidelity-bronze-0: var(--overlay-gradient-fidelity-bronze-0);
+  --color-overlay-gradient-fidelity-silver-100: var(--overlay-gradient-fidelity-silver-100);
+  --color-overlay-gradient-fidelity-silver-0: var(--overlay-gradient-fidelity-silver-0);
+  --color-overlay-gradient-fidelity-gold-100: var(--overlay-gradient-fidelity-gold-100);
+  --color-overlay-gradient-fidelity-gold-0: var(--overlay-gradient-fidelity-gold-0);
+  --color-overlay-gradient-fidelity-ruby-100: var(--overlay-gradient-fidelity-ruby-100);
+  --color-overlay-gradient-fidelity-ruby-0: var(--overlay-gradient-fidelity-ruby-0);
+  --color-focus-brand: var(--focus-brand);
+  --color-focus-accent: var(--focus-accent);
+
+  /* ==========================================
+     🧩 COMPONENTES
+     ========================================== */
+
+  /* SegmentedControl */
+  --color-segmented-container-bg: var(--segmented-container-bg);
+  --color-segmented-container-border: var(--segmented-container-border);
+  --color-segmented-container-content: var(--segmented-container-content);
+  --color-segmented-item-selected-bg: var(--segmented-item-selected-bg);
+  --color-segmented-item-selected-content: var(--segmented-item-selected-content);
+  --color-segmented-item-unselected-bg: var(--segmented-item-unselected-bg);
+  --color-segmented-item-unselected-content: var(--segmented-item-unselected-content);
+
+  /* Slider */
+  --color-slider-empty-bg: var(--slider-empty-bg);
+  --color-slider-empty-track: var(--slider-empty-track);
+  --color-slider-empty-thumb: var(--slider-empty-thumb);
+  --color-slider-empty-border: var(--slider-empty-border);
+  --color-slider-full-bg: var(--slider-full-bg);
+  --color-slider-full-track: var(--slider-full-track);
+  --color-slider-full-thumb: var(--slider-full-thumb);
+  --color-slider-full-border: var(--slider-full-border);
+
+  /* Switch */
+  --color-switch-off-default-track: var(--switch-off-default-track);
+  --color-switch-off-default-thumb: var(--switch-off-default-thumb);
+  --color-switch-off-default-border: var(--switch-off-default-border);
+  --color-switch-off-press-track: var(--switch-off-press-track);
+  --color-switch-off-press-thumb: var(--switch-off-press-thumb);
+  --color-switch-off-press-border: var(--switch-off-press-border);
+  --color-switch-on-default-track: var(--switch-on-default-track);
+  --color-switch-on-default-thumb: var(--switch-on-default-thumb);
+  --color-switch-on-default-border: var(--switch-on-default-border);
+  --color-switch-on-press-track: var(--switch-on-press-track);
+  --color-switch-on-press-thumb: var(--switch-on-press-thumb);
+  --color-switch-on-press-border: var(--switch-on-press-border);
+
+  /* Chip */
+  --color-chip-default-bg: var(--chip-default-bg);
+  --color-chip-default-content: var(--chip-default-content);
+  --color-chip-default-border: var(--chip-default-border);
+  --color-chip-hover-bg: var(--chip-hover-bg);
+  --color-chip-hover-content: var(--chip-hover-content);
+  --color-chip-hover-border: var(--chip-hover-border);
+  --color-chip-active-bg: var(--chip-active-bg);
+  --color-chip-active-content: var(--chip-active-content);
+  --color-chip-active-border: var(--chip-active-border);
+
+  /* Badge */
+  --color-badge-tinted-info-bg: var(--badge-tinted-info-bg);
+  --color-badge-tinted-info-content: var(--badge-tinted-info-content);
+  --color-badge-tinted-info-border: var(--badge-tinted-info-border);
+  --color-badge-tinted-success-bg: var(--badge-tinted-success-bg);
+  --color-badge-tinted-success-content: var(--badge-tinted-success-content);
+  --color-badge-tinted-success-border: var(--badge-tinted-success-border);
+  --color-badge-tinted-warning-bg: var(--badge-tinted-warning-bg);
+  --color-badge-tinted-warning-content: var(--badge-tinted-warning-content);
+  --color-badge-tinted-warning-border: var(--badge-tinted-warning-border);
+  --color-badge-tinted-danger-border: var(--badge-tinted-danger-border);
+  --color-badge-tinted-danger-bg: var(--badge-tinted-danger-bg);
+  --color-badge-tinted-danger-content: var(--badge-tinted-danger-content);
+  --color-badge-tinted-neutral-bg: var(--badge-tinted-neutral-bg);
+  --color-badge-tinted-neutral-content: var(--badge-tinted-neutral-content);
+  --color-badge-tinted-neutral-border: var(--badge-tinted-neutral-border);
+  --color-badge-tinted-cocoa-bg: var(--badge-tinted-cocoa-bg);
+  --color-badge-tinted-cocoa-content: var(--badge-tinted-cocoa-content);
+  --color-badge-tinted-cocoa-border: var(--badge-tinted-cocoa-border);
+  --color-badge-tinted-primary-bg: var(--badge-tinted-primary-bg);
+  --color-badge-tinted-primary-content: var(--badge-tinted-primary-content);
+  --color-badge-tinted-primary-border: var(--badge-tinted-primary-border);
+  --color-badge-solid-info-bg: var(--badge-solid-info-bg);
+  --color-badge-solid-info-content: var(--badge-solid-info-content);
+  --color-badge-solid-info-border: var(--badge-solid-info-border);
+  --color-badge-solid-success-bg: var(--badge-solid-success-bg);
+  --color-badge-solid-success-content: var(--badge-solid-success-content);
+  --color-badge-solid-success-border: var(--badge-solid-success-border);
+  --color-badge-solid-warning-bg: var(--badge-solid-warning-bg);
+  --color-badge-solid-warning-content: var(--badge-solid-warning-content);
+  --color-badge-solid-warning-border: var(--badge-solid-warning-border);
+  --color-badge-solid-danger-bg: var(--badge-solid-danger-bg);
+  --color-badge-solid-danger-content: var(--badge-solid-danger-content);
+  --color-badge-solid-danger-border: var(--badge-solid-danger-border);
+  --color-badge-solid-neutral-bg: var(--badge-solid-neutral-bg);
+  --color-badge-solid-neutral-content: var(--badge-solid-neutral-content);
+  --color-badge-solid-neutral-border: var(--badge-solid-neutral-border);
+  --color-badge-solid-cocoa-bg: var(--badge-solid-cocoa-bg);
+  --color-badge-solid-cocoa-content: var(--badge-solid-cocoa-content);
+  --color-badge-solid-cocoa-border: var(--badge-solid-cocoa-border);
+  --color-badge-solid-primary-bg: var(--badge-solid-primary-bg);
+  --color-badge-solid-primary-content: var(--badge-solid-primary-content);
+  --color-badge-solid-primary-border: var(--badge-solid-primary-border);
+
+  /* Input Field */
+  --color-input-bg: var(--input-bg);
+  --color-input-border: var(--input-border);
+  --color-input-content: var(--input-content);
+  --color-input-hover-border: var(--input-hover-border);
+  --color-input-active-border: var(--input-active-border);
+  --color-input-disabled-bg: var(--input-disabled-bg);
+  --color-input-disabled-content: var(--input-disabled-content);
+  --color-input-disabled-border: var(--input-disabled-border);
+  --color-input-searchbar-bg: var(--input-searchbar-bg);
+
+  /* Dropdown */
+  --color-dropdown-menu-item-bg: var(--dropdown-menu-item-bg);
+  --color-dropdown-menu-item-content: var(--dropdown-menu-item-content);
+  --color-dropdown-menu-item-selected-bg: var(--dropdown-menu-item-selected-bg);
+  --color-dropdown-menu-item-selected-content: var(--dropdown-menu-item-selected-content);
+  --color-dropdown-menu-item-destructive-bg: var(--dropdown-menu-item-destructive-bg);
+  --color-dropdown-menu-item-destructive-hover: var(--dropdown-menu-item-destructive-hover);
+  --color-dropdown-menu-item-destructive-content: var(--dropdown-menu-item-destructive-content);
+
+  /* IndicatorChip */
+  --color-indicator-chip-bg: var(--indicator-chip-bg);
+  --color-indicator-chip-border: var(--indicator-chip-border);
+  --color-indicator-chip-content: var(--indicator-chip-content);
+
+  /* TarjetoID */
+  --color-tjid-classic-shared-surface-base: var(--tjid-classic-shared-surface-base);
+  --color-tjid-classic-shared-surface-raised: var(--tjid-classic-shared-surface-raised);
+  --color-tjid-classic-shared-text-primary: var(--tjid-classic-shared-text-primary);
+  --color-tjid-classic-shared-text-secondary: var(--tjid-classic-shared-text-secondary);
+  --color-tjid-classic-shared-text-muted: var(--tjid-classic-shared-text-muted);
+  --color-tjid-classic-shared-border-default: var(--tjid-classic-shared-border-default);
+  --color-tjid-classic-shared-border-strong: var(--tjid-classic-shared-border-strong);
+  --color-tjid-classic-shared-border-subtle: var(--tjid-classic-shared-border-subtle);
+  --color-tjid-classic-red-accent-base: var(--tjid-classic-red-accent-base);
+  --color-tjid-classic-red-accent-soft: var(--tjid-classic-red-accent-soft);
+  --color-tjid-classic-red-accent-text: var(--tjid-classic-red-accent-text);
+  --color-tjid-classic-red-accent-pattern: var(--tjid-classic-red-accent-pattern);
+  --color-tjid-classic-cocoa-accent-base: var(--tjid-classic-cocoa-accent-base);
+  --color-tjid-classic-cocoa-accent-soft: var(--tjid-classic-cocoa-accent-soft);
+  --color-tjid-classic-cocoa-accent-text: var(--tjid-classic-cocoa-accent-text);
+  --color-tjid-classic-cocoa-accent-pattern: var(--tjid-classic-cocoa-accent-pattern);
+  --color-tjid-classic-purple-accent-base: var(--tjid-classic-purple-accent-base);
+  --color-tjid-classic-purple-accent-soft: var(--tjid-classic-purple-accent-soft);
+  --color-tjid-classic-purple-accent-text: var(--tjid-classic-purple-accent-text);
+  --color-tjid-classic-purple-accent-pattern: var(--tjid-classic-purple-accent-pattern);
+  --color-tjid-classic-orange-accent-base: var(--tjid-classic-orange-accent-base);
+  --color-tjid-classic-orange-accent-soft: var(--tjid-classic-orange-accent-soft);
+  --color-tjid-classic-orange-accent-text: var(--tjid-classic-orange-accent-text);
+  --color-tjid-classic-orange-accent-pattern: var(--tjid-classic-orange-accent-pattern);
+  --color-tjid-classic-green-accent-base: var(--tjid-classic-green-accent-base);
+  --color-tjid-classic-green-accent-soft: var(--tjid-classic-green-accent-soft);
+  --color-tjid-classic-green-accent-text: var(--tjid-classic-green-accent-text);
+  --color-tjid-classic-green-accent-pattern: var(--tjid-classic-green-accent-pattern);
+  --color-tjid-classic-pink-accent-base: var(--tjid-classic-pink-accent-base);
+  --color-tjid-classic-pink-accent-soft: var(--tjid-classic-pink-accent-soft);
+  --color-tjid-classic-pink-accent-text: var(--tjid-classic-pink-accent-text);
+  --color-tjid-classic-pink-accent-pattern: var(--tjid-classic-pink-accent-pattern);
+  --color-tjid-classic-yellow-accent-base: var(--tjid-classic-yellow-accent-base);
+  --color-tjid-classic-yellow-accent-soft: var(--tjid-classic-yellow-accent-soft);
+  --color-tjid-classic-yellow-accent-text: var(--tjid-classic-yellow-accent-text);
+  --color-tjid-classic-yellow-accent-pattern: var(--tjid-classic-yellow-accent-pattern);
+  --color-tjid-classic-blue-accent-base: var(--tjid-classic-blue-accent-base);
+  --color-tjid-classic-blue-accent-soft: var(--tjid-classic-blue-accent-soft);
+  --color-tjid-classic-blue-accent-text: var(--tjid-classic-blue-accent-text);
+  --color-tjid-classic-blue-accent-pattern: var(--tjid-classic-blue-accent-pattern);
+  --color-tjid-classic-gray-accent-base: var(--tjid-classic-gray-accent-base);
+  --color-tjid-classic-gray-accent-soft: var(--tjid-classic-gray-accent-soft);
+  --color-tjid-classic-gray-accent-text: var(--tjid-classic-gray-accent-text);
+  --color-tjid-classic-gray-accent-pattern: var(--tjid-classic-gray-accent-pattern);
+  --color-tjid-expressive-shared-chip-text: var(--tjid-expressive-shared-chip-text);
+  --color-tjid-expressive-shared-overlay-veil: var(--tjid-expressive-shared-overlay-veil);
+  --color-tjid-expressive-red-chip-background: var(--tjid-expressive-red-chip-background);
+  --color-tjid-expressive-red-chip-border: var(--tjid-expressive-red-chip-border);
+  --color-tjid-expressive-red-border-card: var(--tjid-expressive-red-border-card);
+  --color-tjid-expressive-red-border-divider: var(--tjid-expressive-red-border-divider);
+  --color-tjid-expressive-red-border-picture: var(--tjid-expressive-red-border-picture);
+  --color-tjid-expressive-red-border-sticker-slot: var(--tjid-expressive-red-border-sticker-slot);
+  --color-tjid-expressive-red-text-strong: var(--tjid-expressive-red-text-strong);
+  --color-tjid-expressive-red-text-default: var(--tjid-expressive-red-text-default);
+  --color-tjid-expressive-red-text-accent: var(--tjid-expressive-red-text-accent);
+  --color-tjid-expressive-red-text-soft: var(--tjid-expressive-red-text-soft);
+  --color-tjid-expressive-red-surface-tint: var(--tjid-expressive-red-surface-tint);
+  --color-tjid-expressive-red-surface-footer: var(--tjid-expressive-red-surface-footer);
+  --color-tjid-expressive-red-surface-tray: var(--tjid-expressive-red-surface-tray);
+  --color-tjid-expressive-red-surface-pattern: var(--tjid-expressive-red-surface-pattern);
+  --color-tjid-expressive-cocoa-surface-tint: var(--tjid-expressive-cocoa-surface-tint);
+  --color-tjid-expressive-cocoa-surface-footer: var(--tjid-expressive-cocoa-surface-footer);
+  --color-tjid-expressive-cocoa-surface-tray: var(--tjid-expressive-cocoa-surface-tray);
+  --color-tjid-expressive-cocoa-surface-pattern: var(--tjid-expressive-cocoa-surface-pattern);
+  --color-tjid-expressive-cocoa-border-card: var(--tjid-expressive-cocoa-border-card);
+  --color-tjid-expressive-cocoa-border-divider: var(--tjid-expressive-cocoa-border-divider);
+  --color-tjid-expressive-cocoa-border-picture: var(--tjid-expressive-cocoa-border-picture);
+  --color-tjid-expressive-cocoa-border-sticker-slot: var(--tjid-expressive-cocoa-border-sticker-slot);
+  --color-tjid-expressive-cocoa-text-strong: var(--tjid-expressive-cocoa-text-strong);
+  --color-tjid-expressive-cocoa-text-default: var(--tjid-expressive-cocoa-text-default);
+  --color-tjid-expressive-cocoa-text-accent: var(--tjid-expressive-cocoa-text-accent);
+  --color-tjid-expressive-cocoa-text-soft: var(--tjid-expressive-cocoa-text-soft);
+  --color-tjid-expressive-cocoa-chip-background: var(--tjid-expressive-cocoa-chip-background);
+  --color-tjid-expressive-cocoa-chip-border: var(--tjid-expressive-cocoa-chip-border);
+  --color-tjid-expressive-purple-surface-tint: var(--tjid-expressive-purple-surface-tint);
+  --color-tjid-expressive-purple-surface-footer: var(--tjid-expressive-purple-surface-footer);
+  --color-tjid-expressive-purple-surface-tray: var(--tjid-expressive-purple-surface-tray);
+  --color-tjid-expressive-purple-surface-pattern: var(--tjid-expressive-purple-surface-pattern);
+  --color-tjid-expressive-purple-border-card: var(--tjid-expressive-purple-border-card);
+  --color-tjid-expressive-purple-border-divider: var(--tjid-expressive-purple-border-divider);
+  --color-tjid-expressive-purple-border-picture: var(--tjid-expressive-purple-border-picture);
+  --color-tjid-expressive-purple-border-sticker-slot: var(--tjid-expressive-purple-border-sticker-slot);
+  --color-tjid-expressive-purple-text-strong: var(--tjid-expressive-purple-text-strong);
+  --color-tjid-expressive-purple-text-default: var(--tjid-expressive-purple-text-default);
+  --color-tjid-expressive-purple-text-accent: var(--tjid-expressive-purple-text-accent);
+  --color-tjid-expressive-purple-text-soft: var(--tjid-expressive-purple-text-soft);
+  --color-tjid-expressive-purple-chip-background: var(--tjid-expressive-purple-chip-background);
+  --color-tjid-expressive-purple-chip-border: var(--tjid-expressive-purple-chip-border);
+  --color-tjid-expressive-orange-surface-tint: var(--tjid-expressive-orange-surface-tint);
+  --color-tjid-expressive-orange-surface-footer: var(--tjid-expressive-orange-surface-footer);
+  --color-tjid-expressive-orange-surface-tray: var(--tjid-expressive-orange-surface-tray);
+  --color-tjid-expressive-orange-surface-pattern: var(--tjid-expressive-orange-surface-pattern);
+  --color-tjid-expressive-orange-border-card: var(--tjid-expressive-orange-border-card);
+  --color-tjid-expressive-orange-border-divider: var(--tjid-expressive-orange-border-divider);
+  --color-tjid-expressive-orange-border-picture: var(--tjid-expressive-orange-border-picture);
+  --color-tjid-expressive-orange-border-sticker-slot: var(--tjid-expressive-orange-border-sticker-slot);
+  --color-tjid-expressive-orange-text-strong: var(--tjid-expressive-orange-text-strong);
+  --color-tjid-expressive-orange-text-default: var(--tjid-expressive-orange-text-default);
+  --color-tjid-expressive-orange-text-accent: var(--tjid-expressive-orange-text-accent);
+  --color-tjid-expressive-orange-text-soft: var(--tjid-expressive-orange-text-soft);
+  --color-tjid-expressive-orange-chip-background: var(--tjid-expressive-orange-chip-background);
+  --color-tjid-expressive-orange-chip-border: var(--tjid-expressive-orange-chip-border);
+  --color-tjid-expressive-green-surface-tint: var(--tjid-expressive-green-surface-tint);
+  --color-tjid-expressive-green-surface-footer: var(--tjid-expressive-green-surface-footer);
+  --color-tjid-expressive-green-surface-tray: var(--tjid-expressive-green-surface-tray);
+  --color-tjid-expressive-green-surface-pattern: var(--tjid-expressive-green-surface-pattern);
+  --color-tjid-expressive-green-border-card: var(--tjid-expressive-green-border-card);
+  --color-tjid-expressive-green-border-divider: var(--tjid-expressive-green-border-divider);
+  --color-tjid-expressive-green-border-picture: var(--tjid-expressive-green-border-picture);
+  --color-tjid-expressive-green-border-sticker-slot: var(--tjid-expressive-green-border-sticker-slot);
+  --color-tjid-expressive-green-text-strong: var(--tjid-expressive-green-text-strong);
+  --color-tjid-expressive-green-text-default: var(--tjid-expressive-green-text-default);
+  --color-tjid-expressive-green-text-accent: var(--tjid-expressive-green-text-accent);
+  --color-tjid-expressive-green-text-soft: var(--tjid-expressive-green-text-soft);
+  --color-tjid-expressive-green-chip-background: var(--tjid-expressive-green-chip-background);
+  --color-tjid-expressive-green-chip-border: var(--tjid-expressive-green-chip-border);
+  --color-tjid-expressive-pink-surface-tint: var(--tjid-expressive-pink-surface-tint);
+  --color-tjid-expressive-pink-surface-footer: var(--tjid-expressive-pink-surface-footer);
+  --color-tjid-expressive-pink-surface-tray: var(--tjid-expressive-pink-surface-tray);
+  --color-tjid-expressive-pink-surface-pattern: var(--tjid-expressive-pink-surface-pattern);
+  --color-tjid-expressive-pink-border-card: var(--tjid-expressive-pink-border-card);
+  --color-tjid-expressive-pink-border-divider: var(--tjid-expressive-pink-border-divider);
+  --color-tjid-expressive-pink-border-picture: var(--tjid-expressive-pink-border-picture);
+  --color-tjid-expressive-pink-border-sticker-slot: var(--tjid-expressive-pink-border-sticker-slot);
+  --color-tjid-expressive-pink-text-strong: var(--tjid-expressive-pink-text-strong);
+  --color-tjid-expressive-pink-text-default: var(--tjid-expressive-pink-text-default);
+  --color-tjid-expressive-pink-text-accent: var(--tjid-expressive-pink-text-accent);
+  --color-tjid-expressive-pink-text-soft: var(--tjid-expressive-pink-text-soft);
+  --color-tjid-expressive-pink-chip-background: var(--tjid-expressive-pink-chip-background);
+  --color-tjid-expressive-pink-chip-border: var(--tjid-expressive-pink-chip-border);
+  --color-tjid-expressive-yellow-surface-tint: var(--tjid-expressive-yellow-surface-tint);
+  --color-tjid-expressive-yellow-surface-footer: var(--tjid-expressive-yellow-surface-footer);
+  --color-tjid-expressive-yellow-surface-tray: var(--tjid-expressive-yellow-surface-tray);
+  --color-tjid-expressive-yellow-surface-pattern: var(--tjid-expressive-yellow-surface-pattern);
+  --color-tjid-expressive-yellow-border-card: var(--tjid-expressive-yellow-border-card);
+  --color-tjid-expressive-yellow-border-divider: var(--tjid-expressive-yellow-border-divider);
+  --color-tjid-expressive-yellow-border-picture: var(--tjid-expressive-yellow-border-picture);
+  --color-tjid-expressive-yellow-border-sticker-slot: var(--tjid-expressive-yellow-border-sticker-slot);
+  --color-tjid-expressive-yellow-text-strong: var(--tjid-expressive-yellow-text-strong);
+  --color-tjid-expressive-yellow-text-default: var(--tjid-expressive-yellow-text-default);
+  --color-tjid-expressive-yellow-text-accent: var(--tjid-expressive-yellow-text-accent);
+  --color-tjid-expressive-yellow-text-soft: var(--tjid-expressive-yellow-text-soft);
+  --color-tjid-expressive-yellow-chip-background: var(--tjid-expressive-yellow-chip-background);
+  --color-tjid-expressive-yellow-chip-border: var(--tjid-expressive-yellow-chip-border);
+  --color-tjid-expressive-blue-surface-tint: var(--tjid-expressive-blue-surface-tint);
+  --color-tjid-expressive-blue-surface-footer: var(--tjid-expressive-blue-surface-footer);
+  --color-tjid-expressive-blue-surface-tray: var(--tjid-expressive-blue-surface-tray);
+  --color-tjid-expressive-blue-surface-pattern: var(--tjid-expressive-blue-surface-pattern);
+  --color-tjid-expressive-blue-border-card: var(--tjid-expressive-blue-border-card);
+  --color-tjid-expressive-blue-border-divider: var(--tjid-expressive-blue-border-divider);
+  --color-tjid-expressive-blue-border-picture: var(--tjid-expressive-blue-border-picture);
+  --color-tjid-expressive-blue-border-sticker-slot: var(--tjid-expressive-blue-border-sticker-slot);
+  --color-tjid-expressive-blue-text-strong: var(--tjid-expressive-blue-text-strong);
+  --color-tjid-expressive-blue-text-default: var(--tjid-expressive-blue-text-default);
+  --color-tjid-expressive-blue-text-accent: var(--tjid-expressive-blue-text-accent);
+  --color-tjid-expressive-blue-text-soft: var(--tjid-expressive-blue-text-soft);
+  --color-tjid-expressive-blue-chip-background: var(--tjid-expressive-blue-chip-background);
+  --color-tjid-expressive-blue-chip-border: var(--tjid-expressive-blue-chip-border);
+  --color-tjid-expressive-gray-surface-tint: var(--tjid-expressive-gray-surface-tint);
+  --color-tjid-expressive-gray-surface-footer: var(--tjid-expressive-gray-surface-footer);
+  --color-tjid-expressive-gray-surface-tray: var(--tjid-expressive-gray-surface-tray);
+  --color-tjid-expressive-gray-surface-pattern: var(--tjid-expressive-gray-surface-pattern);
+  --color-tjid-expressive-gray-border-card: var(--tjid-expressive-gray-border-card);
+  --color-tjid-expressive-gray-border-divider: var(--tjid-expressive-gray-border-divider);
+  --color-tjid-expressive-gray-border-picture: var(--tjid-expressive-gray-border-picture);
+  --color-tjid-expressive-gray-border-sticker-slot: var(--tjid-expressive-gray-border-sticker-slot);
+  --color-tjid-expressive-gray-text-strong: var(--tjid-expressive-gray-text-strong);
+  --color-tjid-expressive-gray-text-default: var(--tjid-expressive-gray-text-default);
+  --color-tjid-expressive-gray-text-accent: var(--tjid-expressive-gray-text-accent);
+  --color-tjid-expressive-gray-text-soft: var(--tjid-expressive-gray-text-soft);
+  --color-tjid-expressive-gray-chip-background: var(--tjid-expressive-gray-chip-background);
+  --color-tjid-expressive-gray-chip-border: var(--tjid-expressive-gray-chip-border);
+}
+
+/* ==========================================
+   4. DAISYUI (PARA LA LANDING PAGE)
+   Actualizado para usar la nueva arquitectura de Figma
+   ========================================== */
+@plugin "daisyui/theme" {
+  name: "tarjeto";
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
+
+  /*  todo: borrar y asegurar de que estas variables no afecten con el theme y que respondan acorde al tema de la aplicacion  */
+  /* Base */
+  --color-base-100: var(--surface-base);
+  --color-base-200: var(--surface-raised);
+  --color-base-300: var(--surface-subtle);
+  --color-base-content: var(--content-text-primary);
+
+  /* Brand */
+  --color-primary: var(--brand-primary);
+  --color-primary-content: var(--brand-on-primary);
+
+  --color-secondary: var(--surface-accent);
+  --color-secondary-content: var(--content-text-inverse);
+
+  --color-neutral: #2e2e2e;
+  --color-neutral-content: #ffffff;
+
+  /* Estados */
+  --color-info: var(--feedback-info);
+  --color-success: var(--feedback-success);
+  --color-warning: var(--feedback-warning);
+  --color-error: var(--feedback-danger);
+}
+
+/* ==========================================
+   5. TIPOGRAFÍAS Y ANIMACIONES GLOBALES
+   ========================================== */
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona_Sans/MonaSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona_Sans/MonaSans-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona_Sans/MonaSans-SemiBold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona_Sans/MonaSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mona Sans";
+  src: url("/fonts/Mona_Sans/MonaSans-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Domine";
+  src: url("/fonts/Domine/Domine-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Domine";
+  src: url("/fonts/Domine/Domine-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ==========================================
+   5. ESTILOS BASE DEL DOCUMENTO
+   ========================================== */
+@layer base {
+  html,
+  body {
+    scroll-behavior: smooth;
+    background-color: var(--surface-canvas);
+    color: var(--content-text-primary);
+    font-family: var(--font-sans);
+  }
+}
+
+/* ==========================================
+   7. ANIMACIONES DE COMPONENTES
+   ========================================== */
+@keyframes soft-bounce {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(0.95); }
+  60%  { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.btn-pressed {
+  animation: soft-bounce 0.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
